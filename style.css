@@ -1,0 +1,182 @@
+.section {
+	width: 500px;
+  height: 200px;
+	margin: 0 auto 30px;
+	border: 1px solid black;
+}
+
+.text-link {
+	display: block;
+
+	color: #f66d52;
+	font-size: 48px;
+	line-height: 120%;
+	font-weight: bold;
+	text-align: center;
+
+	padding: 20px 0px;
+
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+/*==================== ссылка меняет цвет ========================*/
+.change-color {
+	-webkit-transition: all 1.5s ease;
+	transition: all 1.5s ease;
+}
+
+.change-color:hover {
+	color: #5265f6;
+}
+
+
+/*=================== зачеркнутый текст ======================*/
+
+.line-through:hover {
+  transition: text-decoration 15s ease  ;
+}
+
+.line-through:hover {
+	text-decoration: line-through;
+}
+
+/*=================== Эффект зачеркивания ссылки ======================*/
+
+a.crossed-link {
+	position: relative;
+}
+
+a.crossed-link:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	/* Высота зачеркивающей линии */
+	background: #666;
+	/* Цвет зачеркивающей линии */
+	top: 45%;
+	animation: out 0s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+
+div.crossed:hover a.crossed-link:before {
+	animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+
+/*=================== Эффект зачеркивания ссылки ======================*/
+
+.shadow-text {
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.shadow-text:hover {
+	color: #ffa000;
+	/* Меняем цвет текста */
+	-webkit-text-shadow: 2px 2px 2px #000;
+	-moz-text-shadow: 2px 2px 2px #000;
+	text-shadow: 2px 2px 2px #000;
+}
+
+/*=================== Эффект подчеркивания с сичезанием вперед ======================*/
+
+.underline-one {
+    position: relative;
+  }
+
+.underline-one:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: black; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.underline-one:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: red; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+
+/*=================== Эффект подчеркивания с сичезанием назад ======================*/
+
+.link-ease-in-out a:after {
+  background-color: #f66d52; /* Цвет линии при наведении на нее курсора мыши */
+  display: block;
+  content: "";
+  height: 2px; /* Высота линии */
+  width: 0%;
+  -webkit-transition: width .3s ease-in-out;
+  -moz--transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+}
+.link-ease-in-out a:hover:after,
+.link-ease-in-out a:focus:after {
+  width: 100%;
+}
+
+/*=================== Изменение фона и цвета ссылки ======================*/
+
+.change-bg-color {
+  color: #5a5a5a; /* Цвет текста */
+  background: #ffc; /* Цвет фона */
+  padding: 10px; /* Поля вокруг текста */
+  transition: 2s linear; /* Время изменения */
+}
+.change-bg-color:hover {
+  color: #fff; /* Цвет текста */
+  background: #f66d52; /* Цвет фона */
+}
+
+/*=================== Увеличение текста ======================*/
+
+.gain-center {
+  transition: 1s; /* Время эффекта */
+  text-align: center;
+}
+.gain-center:hover {
+  transform: scale(1.2); /* Увеличиваем масштаб */
+}
+
+/*=================== линии сверху и снизу ======================*/
+
+
+/*  CSS код для линии над заголовком */
+.title-example:before {
+  content: '';
+  display: block;
+  height: 1px; /* Высота линии */
+  background: #f66d52; /* Цвет линии */
+  width: 150px; /* Ширина линии до наведения */
+  margin: 0 auto 10px; /* Отступ с боков по центру и снизу */
+transition: 1s; /* Время, за которое линия возвращается после наведения */
+}
+
+.title-example:hover:before {
+  width: 250px; /* Ширина линии при наведении */
+transition: ease-out 1s; /* Время, за которое линия расширяется при наведении */
+}
+/*  CSS код для линии под заголовком */
+.title-example:after {
+  content: '';
+  display: block;
+  height: 1px; /* Высота линии */
+  background: #f66d52; /* Цвет линии */
+  width: 150px; /* Ширина линии до наведения */
+  margin: 10px auto 0; /* Отступ с боков по центру и сверху */
+transition: 1s; /* Время, за которое линия возвращается после наведения */
+}
+.title-example:hover:after {
+  width: 250px; /* Ширина линии при наведении */
+transition: ease-out 1s; /* Время, за которое линия расширяется при наведении */
+}
