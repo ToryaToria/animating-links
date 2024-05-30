@@ -34,7 +34,7 @@
 /*=================== зачеркнутый текст ======================*/
 
 .line-through:hover {
-  transition: text-decoration 15s ease  ;
+  transition: all 15s ease  ;
 }
 
 .line-through:hover {
@@ -66,8 +66,8 @@ div.crossed:hover a.crossed-link:before {
 /*=================== Эффект зачеркивания ссылки ======================*/
 
 .shadow-text {
-	-webkit-transition: all 0.5s ease;
-	transition: all 0.5s ease;
+	-webkit-transition: all 2.5s ease;
+	transition: all 2.5s ease;
 }
 
 .shadow-text:hover {
@@ -93,7 +93,7 @@ div.crossed:hover a.crossed-link:before {
     width: 0;
     height: 2px; /* Высота линии */
     background-color: black; /* Цвет подчеркивания при исчезании линии*/
-    transition: width 0.5s; /* Время эффекта */
+    transition: width 2.5s; /* Время эффекта */
 }
 
 .underline-one:hover:after {
@@ -118,7 +118,7 @@ div.crossed:hover a.crossed-link:before {
   width: 0%;
   -webkit-transition: width .3s ease-in-out;
   -moz--transition: width .3s ease-in-out;
-  transition: width .3s ease-in-out;
+  transition: width 3.3s ease-in-out;
 }
 .link-ease-in-out a:hover:after,
 .link-ease-in-out a:focus:after {
@@ -131,7 +131,13 @@ div.crossed:hover a.crossed-link:before {
   color: #5a5a5a; /* Цвет текста */
   background: #ffc; /* Цвет фона */
   padding: 10px; /* Поля вокруг текста */
-  transition: 2s linear; /* Время изменения */
+  /* transition: 5s linear;  */
+  /* Время изменения */
+
+  transition: background, color 3.3s ease-in-out;
+  /* transition: color 3.3s ease-in-out; */
+
+
 }
 .change-bg-color:hover {
   color: #fff; /* Цвет текста */
@@ -141,15 +147,17 @@ div.crossed:hover a.crossed-link:before {
 /*=================== Увеличение текста ======================*/
 
 .gain-center {
-  transition: 1s; /* Время эффекта */
-  text-align: center;
+  /* transition: 1s; */
+   /* Время эффекта */
+
+   transition: scale 3.3s ease-in-out;
 }
+
 .gain-center:hover {
   transform: scale(1.2); /* Увеличиваем масштаб */
 }
 
 /*=================== линии сверху и снизу ======================*/
-
 
 /*  CSS код для линии над заголовком */
 .title-example:before {
@@ -164,8 +172,9 @@ transition: 1s; /* Время, за которое линия возвращае
 
 .title-example:hover:before {
   width: 250px; /* Ширина линии при наведении */
-transition: ease-out 1s; /* Время, за которое линия расширяется при наведении */
+transition: ease-out 3s; /* Время, за которое линия расширяется при наведении */
 }
+
 /*  CSS код для линии под заголовком */
 .title-example:after {
   content: '';
@@ -178,5 +187,36 @@ transition: 1s; /* Время, за которое линия возвращае
 }
 .title-example:hover:after {
   width: 250px; /* Ширина линии при наведении */
-transition: ease-out 1s; /* Время, за которое линия расширяется при наведении */
+transition: ease-out 0.5s; /* Время, за которое линия расширяется при наведении */
+}
+
+/*=================== прозрачность ======================*/
+.opasity-example {
+  transition: opacity 4s ease-out; /* Время, за которое линия возвращается после наведения */
+}
+
+.opasity-example:hover {
+  opacity: 0.2;
+  transition: 3s; /* Время, за которое линия возвращается после наведения */
+
+  border: 1px d red;
+}
+
+
+/*=================== Использование background-clip: text ======================*/
+.bckground-clip-link {
+  background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+
+  transition: background-position 3ms ease;
+}
+
+
+.bckground-clip-link:hover {
+  background-position: 0 100%;
 }
